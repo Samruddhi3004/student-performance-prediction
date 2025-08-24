@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - Student Performance Predictor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4">
+    <div class="bg-slate-800 p-8 rounded-2xl shadow-lg w-full max-w-4xl border border-slate-700">
+        <h1 class="text-3xl font-bold text-center mb-6 text-emerald-400">Prediction History</h1>
+        {% if data %}
+        <div class="overflow-x-auto">
+            <table class="w-full text-left table-auto border-collapse">
+                <thead class="bg-slate-700">
+                    <tr>
+                        <th class="p-4 rounded-tl-xl">Gender</th>
+                        <th class="p-4">Race</th>
+                        <th class="p-4">Parental Education</th>
+                        <th class="p-4">Lunch</th>
+                        <th class="p-4">Prep</th>
+                        <th class="p-4 rounded-tr-xl">Prediction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                    <tr class="border-t border-slate-600 hover:bg-slate-700/50">
+                        <td class="p-4">{{ row.Gender }}</td>
+                        <td class="p-4">{{ row.Race }}</td>
+                        <td class="p-4">{{ row.Parental_Education }}</td>
+                        <td class="p-4">{{ row.Lunch }}</td>
+                        <td class="p-4">{{ row.Prep }}</td>
+                        <td class="p-4">{{ row.Prediction }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p class="text-center text-slate-400">No predictions yet. Make a prediction on the home page.</p>
+        {% endif %}
+        <div class="mt-8 text-center">
+            <a href="/" class="bg-slate-700 text-white font-bold py-3 px-6 rounded-xl hover:bg-slate-600 transition duration-300 shadow-md transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-slate-500">
+                Back to Home
+            </a>
+        </div>
+    </div>
+</body>
+</html>
