@@ -1,0 +1,9 @@
+Gender,Race,Parental_Education,Lunch,Prep,Prediction
+male,group B,master's degree,free/reduced,completed,Pass
+male,group C,bachelor's degree,free/reduced,none,Pass
+female,group D,some high school,free/reduced,none,Pass
+male,group E,some college,standard,none,Pass
+male,group A,associate's degree,standard,completed,Fail
+male,group A,associate's degree,standard,completed,Fail
+female,group A,master's degree,free/reduced,completed,Pass
+male,group A,associate's degree,standard,completed,Fail
